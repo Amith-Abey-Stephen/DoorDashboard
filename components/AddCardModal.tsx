@@ -57,15 +57,14 @@ export default function AddCardModal({ isOpen, onClose, onAdd }: AddCardModalPro
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-45%" }}
+            animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-45%" }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
             style={{
               position: "fixed",
               top: "50%",
               left: "50%",
-              transform: "translate(-50%, -50%)",
               width: "90%",
               maxWidth: "420px",
               background: "var(--bg-card)",

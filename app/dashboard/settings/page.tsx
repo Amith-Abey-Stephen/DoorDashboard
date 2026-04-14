@@ -201,17 +201,6 @@ export default function SettingsPage() {
           );
         })}
       </div>
-
-      {/* Note */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginTop: "1.5rem", lineHeight: 1.6 }}
-      >
-        ⚠️ To update Firebase credentials, edit your <code style={{ fontFamily: "monospace", color: "var(--text-secondary)" }}>.env.local</code> file and redeploy to Vercel.
-        Sensitive secrets (WiFi credentials, Discord webhook URL) are stored in the ESP32 firmware only.
-      </motion.p>
     </div>
   );
 }
