@@ -14,7 +14,7 @@ export function useCards() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const cardsRef = ref(db, "cards");
+    const cardsRef = ref(db, "SmartDoor/cards");
     const unsub = onValue(cardsRef, (snapshot) => {
       const data = snapshot.val();
       if (!data) {
@@ -34,15 +34,15 @@ export function useCards() {
 
   const addCard = async (uid: string, owner: string) => {
     const normalized = uid.toUpperCase().replace(/\s/g, "");
-    await set(ref(db, `cards/${normalized}`), owner);
+    await set(ref(db, `SmartDoor/cards/${normalized}`), owner);
   };
 
   const removeCard = async (uid: string) => {
-    await remove(ref(db, `cards/${uid}`));
+    await remove(ref(db, `SmartDoor/cards/${uid}`));
   };
 
   const updateCard = async (uid: string, newOwner: string) => {
-    await set(ref(db, `cards/${uid}`), newOwner);
+    await set(ref(db, `SmartDoor/cards/${uid}`), newOwner);
   };
 
   return { cards, loading, addCard, removeCard, updateCard };

@@ -172,7 +172,7 @@ void fetchCards() {
 
   Serial.println("[Firebase] Fetching cards...");
   HTTPClient http;
-  http.begin(String(FIREBASE_URL) + "/cards.json");
+  http.begin(String(FIREBASE_URL) + "/SmartDoor/cards.json");
   int code = http.GET();
   
   if (code == 200) {
@@ -327,7 +327,7 @@ void logToFirebase(String owner, String uid, bool status) {
   json.set("status", status);
   json.set("time", now);
 
-  String path = "/logs/" + timestamp;
+  String path = "/SmartDoor/logs/" + timestamp;
   if (Firebase.RTDB.setJSON(&fbdo, path.c_str(), &json)) {
     Serial.println("Firebase log saved successfully!");
   } else {

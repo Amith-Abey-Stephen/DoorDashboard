@@ -18,7 +18,7 @@ export function useLogs(limit = 50) {
 
   useEffect(() => {
     const logsRef = query(
-      ref(db, "logs"),
+      ref(db, "SmartDoor/logs"),
       orderByKey(),
       limitToLast(limit)
     );
